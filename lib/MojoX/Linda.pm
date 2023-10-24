@@ -13,9 +13,10 @@ use Mojo::File 'path';
 # VERSION
 
 sub conf ($conf) {
-    my $conf_app = Config::App->find;
+    my $conf_app   = Config::App->find;
+    my $mojo_linda = ($conf_app) ? $conf_app->get( qw( mojolicious linda ) ) : {};
 
-    $conf->{$_}  //= $conf_app->{mojolicious}{linda}{$_} for ( qw( silent app mode backend ) );
+    $conf->{$_}  //= $mojo_linda->{$_} for ( qw( silent app mode backend ) );
     $conf->{app} //= $ARGV[0] || do {
         my $match;
         for my $file ( path('.')->list_tree->to_array->@* ) {
@@ -32,7 +33,7 @@ sub conf ($conf) {
     };
 
     for my $name ( qw( listen watch ) ) {
-        my %hash = map { $_ => 1 } $conf->{$name}->@*, $conf->{mojolicious}{linda}{$name}->@*;
+        my %hash = map { $_ => 1 } $conf->{$name}->@*, $mojo_linda->{$name}->@*;
         $conf->{$name} = [ keys %hash ];
     }
 
