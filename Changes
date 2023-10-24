@@ -1,6 +1,8 @@
 Revision history for MojoX::Linda
 
 {{$NEXT}}
+
+1.01      2023-10-24 15:42:31-07:00 America/Los_Angeles
         - Slightly improved test coverage (kinda)
 
 0.001     2023-10-24 15:28:33-07:00 America/Los_Angeles
