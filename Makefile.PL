@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use 5.016;
+use 5.022;
 
 use ExtUtils::MakeMaker;
 
@@ -17,7 +17,7 @@ my %WriteMakefileArgs = (
     "bin/linda"
   ],
   "LICENSE" => "artistic_2",
-  "MIN_PERL_VERSION" => "5.016",
+  "MIN_PERL_VERSION" => "5.022",
   "NAME" => "MojoX::Linda",
   "PREREQ_PM" => {
     "Class::Method::Modifiers" => 0,
@@ -37,7 +37,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "1.00",
+  "VERSION" => "0.001",
   "test" => {
     "TESTS" => "t/*.t"
   }

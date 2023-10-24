@@ -1,7 +1,7 @@
 package MojoX::Linda;
 # ABSTRACT: Plausibly helpful (and probably drunk) wrapper around morbo
 
-use 5.016;
+use 5.022;
 use exact;
 
 use Class::Method::Modifiers 'install_modifier';
@@ -168,5 +168,7 @@ You can also look for additional information at:
 * L<Codecov|https://codecov.io/gh/gryphonshafer/MojoX-Linda>
 * L<CPANTS|http://cpants.cpanauthors.org/dist/MojoX-Linda>
 * L<CPAN Testers|http://www.cpantesters.org/distro/M/MojoX-Linda.html>
+
+=for Pod::Coverage conf run
 
 =cut
