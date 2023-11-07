@@ -1,6 +1,7 @@
 Revision history for MojoX::Linda
 
 {{$NEXT}}
+        - use Config::App 1.17 and include a deimport call on conf()
 
 1.02      2023-10-24 16:14:53-07:00 America/Los_Angeles
         - Fix bug in loading conf from Config::App mojolicious/linda location

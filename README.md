@@ -4,7 +4,7 @@ MojoX::Linda - Plausibly helpful (and probably drunk) wrapper around morbo
 
 # VERSION
 
-version 1.02
+version 1.03
 
 [![test](https://github.com/gryphonshafer/MojoX-Linda/workflows/test/badge.svg)](https://github.com/gryphonshafer/MojoX-Linda/actions?query=workflow%3Atest)
 [![codecov](https://codecov.io/gh/gryphonshafer/MojoX-Linda/graph/badge.svg)](https://codecov.io/gh/gryphonshafer/MojoX-Linda)
@@ -13,11 +13,11 @@ version 1.02
 
     linda [OPTIONS]
         -s, --silent
-        -a, --app     APPLICATION
-        -m, --mode    MOJO_MODE
-        -b, --backend MOJO_MORBO_BACKEND
-        -l, --listen  LISTEN_PATTERN    # can be repeated
-        -w, --watch   DIRECTORY_OR_FILE # can be repeated
+        -a, --app        APPLICATION
+        -p, --production
+        -b, --backend    MOJO_MORBO_BACKEND
+        -l, --listen     LISTEN_PATTERN    # can be repeated
+        -w, --watch      DIRECTORY_OR_FILE # can be repeated
         -h, --help
         -m, --man
 
@@ -45,9 +45,9 @@ Mojolicious application.
 
 `linda`'s judgement here should not be trusted.
 
-## -m, --mode
+## -p, --production
 
-See [Mojo::Server::Morbo](https://metacpan.org/pod/Mojo%3A%3AServer%3A%3AMorbo).
+Set MOJO\_MODE to "production".
 
 ## -b, --backend
 
@@ -66,9 +66,9 @@ See [Mojo::Server::Morbo](https://metacpan.org/pod/Mojo%3A%3AServer%3A%3AMorbo).
 # CONFIGURATION
 
 `linda` will initially try to find and load a configuration file via a call to
-[Config::App](https://metacpan.org/pod/Config%3A%3AApp)'s `find`. If `find` returns a configuration, `linda` will
-look in that configuration under `mojolicious/linda` for settings. Any settings
-will be overwritten by any explicit command-line settings.
+[Config::App](https://metacpan.org/pod/Config%3A%3AApp). If that returns a configuration, `linda` will look in that
+configuration under `mojolicious/linda` for settings. Any settings will be
+overwritten by any explicit command-line settings.
 
 # SEE ALSO
 

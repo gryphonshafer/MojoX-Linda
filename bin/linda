@@ -27,7 +27,7 @@ usage($help_man) if $help_man;
 my $conf = MojoX::Linda::conf( options( qw{
     silent|s
     app|a=s
-    mode|m=s
+    production|prod|p
     backend|b=s
     listen|l=s@
     watch|w=s@
